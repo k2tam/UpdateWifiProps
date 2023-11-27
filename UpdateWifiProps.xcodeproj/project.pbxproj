@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05FD0C4C2B147AD100ED4528 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C4B2B147AD100ED4528 /* AppDelegate.swift */; };
+		05FD0C4E2B147AD100ED4528 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C4D2B147AD100ED4528 /* SceneDelegate.swift */; };
+		05FD0C552B147AD300ED4528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05FD0C542B147AD300ED4528 /* Assets.xcassets */; };
+		05FD0C582B147AD300ED4528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05FD0C562B147AD300ED4528 /* LaunchScreen.storyboard */; };
+		05FD0C612B147C0C00ED4528 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C5F2B147C0C00ED4528 /* ChangePasswordVC.swift */; };
+		05FD0C622B147C0C00ED4528 /* ChangePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05FD0C602B147C0C00ED4528 /* ChangePasswordVC.xib */; };
+		05FD0C642B147DE900ED4528 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C632B147DE900ED4528 /* Extension.swift */; };
+		05FD0C662B1481CB00ED4528 /* ChangeWFPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C652B1481CB00ED4528 /* ChangeWFPasswordModel.swift */; };
+		05FD0C6D2B149AD900ED4528 /* ChangePasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C6C2B149AD900ED4528 /* ChangePasswordVM.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05FD0C482B147AD100ED4528 /* UpdateWifiProps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpdateWifiProps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05FD0C4B2B147AD100ED4528 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		05FD0C4D2B147AD100ED4528 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		05FD0C542B147AD300ED4528 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05FD0C572B147AD300ED4528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		05FD0C592B147AD300ED4528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05FD0C5F2B147C0C00ED4528 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		05FD0C602B147C0C00ED4528 /* ChangePasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordVC.xib; sourceTree = "<group>"; };
+		05FD0C632B147DE900ED4528 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		05FD0C652B1481CB00ED4528 /* ChangeWFPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeWFPasswordModel.swift; sourceTree = "<group>"; };
+		05FD0C6C2B149AD900ED4528 /* ChangePasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVM.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05FD0C452B147AD100ED4528 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05FD0C3F2B147AD100ED4528 = {
+			isa = PBXGroup;
+			children = (
+				05FD0C4A2B147AD100ED4528 /* UpdateWifiProps */,
+				05FD0C492B147AD100ED4528 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		05FD0C492B147AD100ED4528 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05FD0C482B147AD100ED4528 /* UpdateWifiProps.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05FD0C4A2B147AD100ED4528 /* UpdateWifiProps */ = {
+			isa = PBXGroup;
+			children = (
+				05FD0C6B2B149AC800ED4528 /* ViewModels */,
+				05FD0C672B14854300ED4528 /* Views */,
+				05FD0C4B2B147AD100ED4528 /* AppDelegate.swift */,
+				05FD0C4D2B147AD100ED4528 /* SceneDelegate.swift */,
+				05FD0C542B147AD300ED4528 /* Assets.xcassets */,
+				05FD0C562B147AD300ED4528 /* LaunchScreen.storyboard */,
+				05FD0C592B147AD300ED4528 /* Info.plist */,
+				05FD0C632B147DE900ED4528 /* Extension.swift */,
+				05FD0C652B1481CB00ED4528 /* ChangeWFPasswordModel.swift */,
+			);
+			path = UpdateWifiProps;
+			sourceTree = "<group>";
+		};
+		05FD0C672B14854300ED4528 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05FD0C5F2B147C0C00ED4528 /* ChangePasswordVC.swift */,
+				05FD0C602B147C0C00ED4528 /* ChangePasswordVC.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		05FD0C6B2B149AC800ED4528 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				05FD0C6C2B149AD900ED4528 /* ChangePasswordVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05FD0C472B147AD100ED4528 /* UpdateWifiProps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05FD0C5C2B147AD300ED4528 /* Build configuration list for PBXNativeTarget "UpdateWifiProps" */;
+			buildPhases = (
+				05FD0C442B147AD100ED4528 /* Sources */,
+				05FD0C452B147AD100ED4528 /* Frameworks */,
+				05FD0C462B147AD100ED4528 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UpdateWifiProps;
+			productName = UpdateWifiProps;
+			productReference = 05FD0C482B147AD100ED4528 /* UpdateWifiProps.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05FD0C402B147AD100ED4528 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					05FD0C472B147AD100ED4528 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 05FD0C432B147AD100ED4528 /* Build configuration list for PBXProject "UpdateWifiProps" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 05FD0C3F2B147AD100ED4528;
+			productRefGroup = 05FD0C492B147AD100ED4528 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05FD0C472B147AD100ED4528 /* UpdateWifiProps */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05FD0C462B147AD100ED4528 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05FD0C582B147AD300ED4528 /* LaunchScreen.storyboard in Resources */,
+				05FD0C552B147AD300ED4528 /* Assets.xcassets in Resources */,
+				05FD0C622B147C0C00ED4528 /* ChangePasswordVC.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05FD0C442B147AD100ED4528 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05FD0C4C2B147AD100ED4528 /* AppDelegate.swift in Sources */,
+				05FD0C6D2B149AD900ED4528 /* ChangePasswordVM.swift in Sources */,
+				05FD0C4E2B147AD100ED4528 /* SceneDelegate.swift in Sources */,
+				05FD0C662B1481CB00ED4528 /* ChangeWFPasswordModel.swift in Sources */,
+				05FD0C612B147C0C00ED4528 /* ChangePasswordVC.swift in Sources */,
+				05FD0C642B147DE900ED4528 /* Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		05FD0C562B147AD300ED4528 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05FD0C572B147AD300ED4528 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05FD0C5A2B147AD300ED4528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		05FD0C5B2B147AD300ED4528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		05FD0C5D2B147AD300ED4528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 29955KP3ZL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UpdateWifiProps/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.k2tam.UpdateWifiProps;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		05FD0C5E2B147AD300ED4528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 29955KP3ZL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UpdateWifiProps/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.k2tam.UpdateWifiProps;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05FD0C432B147AD100ED4528 /* Build configuration list for PBXProject "UpdateWifiProps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05FD0C5A2B147AD300ED4528 /* Debug */,
+				05FD0C5B2B147AD300ED4528 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05FD0C5C2B147AD300ED4528 /* Build configuration list for PBXNativeTarget "UpdateWifiProps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05FD0C5D2B147AD300ED4528 /* Debug */,
+				05FD0C5E2B147AD300ED4528 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05FD0C402B147AD100ED4528 /* Project object */;
+}
