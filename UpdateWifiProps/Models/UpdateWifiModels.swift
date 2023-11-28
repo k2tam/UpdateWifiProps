@@ -1,15 +1,24 @@
 //
-//  ChangeWFPasswordModel.swift
+//  RenameWFModel.swift
 //  UpdateWifiProps
 //
-//  Created by k2 tam on 27/11/2023.
+//  Created by k2 tam on 28/11/2023.
 //
 
 import Foundation
 
-enum TypeRegexPattern: String{
+
+enum eTypeRegexPattern: String{
     case wifiPassword = ".*[^A-Za-z0-9\\!\\@\\#\\$\\%\\(\\)\\:\\;\\.\\,\\_\\-].*"
     case wifiname = ".*[^A-Za-z0-9\\_\\.\\-\\s].*"
+}
+
+struct RenameWifiModel {
+    var key: String
+    var name: String
+    var desc: String
+    var wfNameLengthMaximum: Int
+    var wfName: String
 }
 
 struct ChangeWFPasswordModel {
@@ -17,7 +26,8 @@ struct ChangeWFPasswordModel {
     var name: String
     var desc: String
     var icon: String
-    var passwordLimit: Int
+    var passLengthMinimum: Int
     var password: String
     
 }
+

@@ -16,7 +16,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let rootVC = ChangePasswordVC()
+        
+        let renameWFModel = RenameWifiModel(key: "", name: "Tên Wi-Fi", desc: "Khi thay đổi mật khẩu Wi-Fi, bạn cần kết nối lại các thiết bị đã lưu mật khẩu trước đó như điện thoại, camera... để tiếp tục truy cập Internet.", wfNameLengthMaximum: 24, wfName: "FPT Telecom")
+        
+        
+        let changeWFPasswordModel = ChangeWFPasswordModel(
+            key: "WFPassword",
+            name: "Mật khẩu",
+            desc: "Khi thay đổi mật khẩu Wi-Fi, bạn cần kết nối lại các thiết bị đã lưu mật khẩu trước đó như điện thoại, camera... để tiếp tục truy cập Internet.",
+            icon: "",
+            passLengthMinimum: 8,
+            password: "19006601"
+        )
+        
+//        let rootVC = ChangePasswordVC(changeWFPassModel: changeWFPasswordModel)
+        let rootVC = RenameWifiVC(renameWFModel: renameWFModel)
         
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = rootVC

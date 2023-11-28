@@ -9,14 +9,7 @@ import UIKit
 
 class ChangePasswordVC: UIViewController {
     
-    let changeWFPassModel = ChangeWFPasswordModel(
-        key: "WFPassword",
-        name: "Mật khẩu",
-        desc: "Khi thay đổi mật khẩu Wi-Fi, bạn cần kết nối lại các thiết bị đã lưu mật khẩu trước đó như điện thoại, camera... để tiếp tục truy cập Internet.",
-        icon: "",
-        passwordLimit: 8,
-        password: "19006601"
-    )
+    var changeWFPassModel:  ChangeWFPasswordModel
     
     var vm : ChangePasswordVM!
     
@@ -44,7 +37,15 @@ class ChangePasswordVC: UIViewController {
     
     @IBOutlet weak var btnUpdate: UIButton!
     
-  
+    init(changeWFPassModel: ChangeWFPasswordModel){
+        self.changeWFPassModel = changeWFPassModel
+        super.init(nibName: "ChangePasswordVC", bundle: Bundle.main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +53,10 @@ class ChangePasswordVC: UIViewController {
         setupVM()
         canUpdate = false
         setupUI()
-        setupData()
         tfPassword.delegate = self
 
     }
-    
-    
-    
+
     @IBAction func btnPressed(_ sender: UIButton) {
         if let validPassword =  tfPassword.text {
             vm.didGetUpdatablePassword(password: validPassword)
@@ -74,8 +72,12 @@ class ChangePasswordVC: UIViewController {
         changePasswordContainerView.layer.cornerRadius = 8
         
         tfPassword.borderStyle = .none
-
         
+        
+        lbTitle.text = changeWFPassModel.name
+        lbDescription.text = changeWFPassModel.desc
+        
+        tfPassword.text = changeWFPassModel.password
     }
     
     private func setupVM() {
@@ -83,13 +85,7 @@ class ChangePasswordVC: UIViewController {
         vm.delegate = self
     }
     
-    private func setupData() {
-        lbTitle.text = changeWFPassModel.name
-        lbDescription.text = changeWFPassModel.desc
-        
-        tfPassword.text = changeWFPassModel.password
-        
-    }
+ 
     
 }
 
@@ -108,8 +104,6 @@ extension ChangePasswordVC: UITextFieldDelegate {
 }
 
 extension ChangePasswordVC: ChangePasswordVMDelegate {
-    
-
     func didChangeCanUpdatePass(enableUpdate: Bool) {
         canUpdate = enableUpdate
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		054C94F52B15E36C00620BAD /* UpdateWifiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C94F42B15E36C00620BAD /* UpdateWifiModels.swift */; };
+		054C94F72B15E68D00620BAD /* RenameWifiVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C94F62B15E68D00620BAD /* RenameWifiVM.swift */; };
 		05FD0C4C2B147AD100ED4528 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C4B2B147AD100ED4528 /* AppDelegate.swift */; };
 		05FD0C4E2B147AD100ED4528 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C4D2B147AD100ED4528 /* SceneDelegate.swift */; };
 		05FD0C552B147AD300ED4528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05FD0C542B147AD300ED4528 /* Assets.xcassets */; };
@@ -14,11 +16,14 @@
 		05FD0C612B147C0C00ED4528 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C5F2B147C0C00ED4528 /* ChangePasswordVC.swift */; };
 		05FD0C622B147C0C00ED4528 /* ChangePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05FD0C602B147C0C00ED4528 /* ChangePasswordVC.xib */; };
 		05FD0C642B147DE900ED4528 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C632B147DE900ED4528 /* Extension.swift */; };
-		05FD0C662B1481CB00ED4528 /* ChangeWFPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C652B1481CB00ED4528 /* ChangeWFPasswordModel.swift */; };
 		05FD0C6D2B149AD900ED4528 /* ChangePasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C6C2B149AD900ED4528 /* ChangePasswordVM.swift */; };
+		05FD0C702B15D8F500ED4528 /* RenameWifiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD0C6E2B15D8F500ED4528 /* RenameWifiVC.swift */; };
+		05FD0C712B15D8F500ED4528 /* RenameWifiVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05FD0C6F2B15D8F500ED4528 /* RenameWifiVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		054C94F42B15E36C00620BAD /* UpdateWifiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateWifiModels.swift; sourceTree = "<group>"; };
+		054C94F62B15E68D00620BAD /* RenameWifiVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameWifiVM.swift; sourceTree = "<group>"; };
 		05FD0C482B147AD100ED4528 /* UpdateWifiProps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpdateWifiProps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05FD0C4B2B147AD100ED4528 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05FD0C4D2B147AD100ED4528 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,8 +33,9 @@
 		05FD0C5F2B147C0C00ED4528 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		05FD0C602B147C0C00ED4528 /* ChangePasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordVC.xib; sourceTree = "<group>"; };
 		05FD0C632B147DE900ED4528 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		05FD0C652B1481CB00ED4528 /* ChangeWFPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeWFPasswordModel.swift; sourceTree = "<group>"; };
 		05FD0C6C2B149AD900ED4528 /* ChangePasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVM.swift; sourceTree = "<group>"; };
+		05FD0C6E2B15D8F500ED4528 /* RenameWifiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameWifiVC.swift; sourceTree = "<group>"; };
+		05FD0C6F2B15D8F500ED4528 /* RenameWifiVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RenameWifiVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		054C94F32B15E35B00620BAD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				054C94F42B15E36C00620BAD /* UpdateWifiModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		05FD0C3F2B147AD100ED4528 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +76,7 @@
 		05FD0C4A2B147AD100ED4528 /* UpdateWifiProps */ = {
 			isa = PBXGroup;
 			children = (
+				054C94F32B15E35B00620BAD /* Models */,
 				05FD0C6B2B149AC800ED4528 /* ViewModels */,
 				05FD0C672B14854300ED4528 /* Views */,
 				05FD0C4B2B147AD100ED4528 /* AppDelegate.swift */,
@@ -70,7 +85,6 @@
 				05FD0C562B147AD300ED4528 /* LaunchScreen.storyboard */,
 				05FD0C592B147AD300ED4528 /* Info.plist */,
 				05FD0C632B147DE900ED4528 /* Extension.swift */,
-				05FD0C652B1481CB00ED4528 /* ChangeWFPasswordModel.swift */,
 			);
 			path = UpdateWifiProps;
 			sourceTree = "<group>";
@@ -80,6 +94,8 @@
 			children = (
 				05FD0C5F2B147C0C00ED4528 /* ChangePasswordVC.swift */,
 				05FD0C602B147C0C00ED4528 /* ChangePasswordVC.xib */,
+				05FD0C6E2B15D8F500ED4528 /* RenameWifiVC.swift */,
+				05FD0C6F2B15D8F500ED4528 /* RenameWifiVC.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -88,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				05FD0C6C2B149AD900ED4528 /* ChangePasswordVM.swift */,
+				054C94F62B15E68D00620BAD /* RenameWifiVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -151,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05FD0C582B147AD300ED4528 /* LaunchScreen.storyboard in Resources */,
+				05FD0C712B15D8F500ED4528 /* RenameWifiVC.xib in Resources */,
 				05FD0C552B147AD300ED4528 /* Assets.xcassets in Resources */,
 				05FD0C622B147C0C00ED4528 /* ChangePasswordVC.xib in Resources */,
 			);
@@ -165,8 +183,10 @@
 			files = (
 				05FD0C4C2B147AD100ED4528 /* AppDelegate.swift in Sources */,
 				05FD0C6D2B149AD900ED4528 /* ChangePasswordVM.swift in Sources */,
+				05FD0C702B15D8F500ED4528 /* RenameWifiVC.swift in Sources */,
 				05FD0C4E2B147AD100ED4528 /* SceneDelegate.swift in Sources */,
-				05FD0C662B1481CB00ED4528 /* ChangeWFPasswordModel.swift in Sources */,
+				054C94F72B15E68D00620BAD /* RenameWifiVM.swift in Sources */,
+				054C94F52B15E36C00620BAD /* UpdateWifiModels.swift in Sources */,
 				05FD0C612B147C0C00ED4528 /* ChangePasswordVC.swift in Sources */,
 				05FD0C642B147DE900ED4528 /* Extension.swift in Sources */,
 			);

@@ -8,21 +8,39 @@
 import Foundation
 import UIKit
 
+enum ePasswordErrorType {
+    case length
+    case duplicate
+    case character
+}
+
 
 protocol ChangePasswordVMDelegate: AnyObject{
     //Function to enable or disable update password button
     func didChangeCanUpdatePass(enableUpdate: Bool)
 }
 
-
 class ChangePasswordVM {
+    
     let passwordModel: ChangeWFPasswordModel
-    var canUpdatePass: Bool = false
     var delegate: ChangePasswordVMDelegate?
     
-
     init(passwordModel: ChangeWFPasswordModel) {
         self.passwordModel = passwordModel
+    }
+    
+    
+    //TODO: Handle error message here
+    func firePasswordErrorMessage(type: ePasswordErrorType){
+        switch type {
+        case .length:
+            print("length not meet")
+        case .duplicate:
+            print("password is the same with the old one")
+        case .character:
+            print("invalid character")
+
+        }
     }
     
     
@@ -31,10 +49,21 @@ class ChangePasswordVM {
         print(password)
     }
     
+    
+    
+    /// Function to check a character is able to input is pass textfield
+    /// - Parameters:
+    ///   - textField: textfield before input
+    ///   - string: character input
+    /// - Returns: true to allow character get in textfield otherwise not allow it
     func checkPassword(textField: UITextField, replacementString string: String) -> Bool {
         
         //string is character inputed
-        if string.range(of: TypeRegexPattern.wifiPassword.rawValue, options: .regularExpression) != nil {
+        if string.range(of: eTypeRegexPattern.wifiPassword.rawValue, options: .regularExpression) != nil {
+            //Fire error message because character input is invalid
+            firePasswordErrorMessage(type: .character)
+
+            
             //Case  pass does not matches the regex.
             return false
             
@@ -49,16 +78,24 @@ class ChangePasswordVM {
             }
             
             //Check length of pass
-            if curPassTxt.count >= passwordModel.passwordLimit {
+            if curPassTxt.count >= passwordModel.passLengthMinimum {
+               
                 delegate?.didChangeCanUpdatePass(enableUpdate: true)
+                
             }else {
+                //Fire error password not meet minimum length
+                firePasswordErrorMessage(type: .length)
+                
                 //Disable update because length condition not met
                 delegate?.didChangeCanUpdatePass(enableUpdate: false)
             }
             
             //Check new pass vs old pass
             if curPassTxt ==  passwordModel.password{
-                //Disable update because new password is the same with old password
+                //Fire error message because password is the same with the old one
+                firePasswordErrorMessage(type: .duplicate)
+                
+                //Disable update because new password is the same with the old one
                 delegate?.didChangeCanUpdatePass(enableUpdate: false)
             }
             
