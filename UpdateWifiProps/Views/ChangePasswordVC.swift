@@ -8,10 +8,37 @@
 import UIKit
 
 class ChangePasswordVC: UIViewController {
+    @IBOutlet weak var changePasswordContainerView: UIView!
+    @IBOutlet weak var lbTitle: UILabel!
+    
+    @IBOutlet weak var imgTFIcon: UIImageView!
+    @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var btnTF: UILabel!
+    
+    
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var lbError: UILabel!
+    
+    @IBOutlet weak var lbDescription: UILabel!
+    
+    @IBOutlet weak var btnUpdate: UIButton!
     
     var changeWFPassModel:  ChangeWFPasswordModel
     
     var vm : ChangePasswordVM!
+    
+    var isDisplayError: Bool = false {
+        didSet {
+            if isDisplayError {
+                errorView.isHidden = false
+                
+            }else{
+                errorView.isHidden = true
+            }
+            
+          
+        }
+    }
     
     var canUpdate: Bool = false {
         didSet {
@@ -26,16 +53,7 @@ class ChangePasswordVC: UIViewController {
         }
     }
     
-    @IBOutlet weak var changePasswordContainerView: UIView!
-    @IBOutlet weak var lbTitle: UILabel!
-    
-    @IBOutlet weak var imgTFIcon: UIImageView!
-    @IBOutlet weak var tfPassword: UITextField!
-    @IBOutlet weak var btnTF: UILabel!
-    
-    @IBOutlet weak var lbDescription: UILabel!
-    
-    @IBOutlet weak var btnUpdate: UIButton!
+   
     
     init(changeWFPassModel: ChangeWFPasswordModel){
         self.changeWFPassModel = changeWFPassModel
@@ -51,8 +69,10 @@ class ChangePasswordVC: UIViewController {
         super.viewDidLoad()
         
         setupVM()
-        canUpdate = false
         setupUI()
+        
+        canUpdate = false
+        isDisplayError = false
         tfPassword.delegate = self
 
     }
@@ -104,8 +124,33 @@ extension ChangePasswordVC: UITextFieldDelegate {
 }
 
 extension ChangePasswordVC: ChangePasswordVMDelegate {
+    
+    //TODO: Hande error message here
+    func didGetInputErrorMessage(message: String, willDisapear : Bool) {
+        isDisplayError = true
+        lbError.text = message
+        
+        
+        if willDisapear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                self.isDisplayError = false
+            }
+        }
+    
+    }
+    
+   
+    
     func didChangeCanUpdatePass(enableUpdate: Bool) {
-        canUpdate = enableUpdate
+        
+        if enableUpdate {
+            canUpdate = true
+            isDisplayError = false
+        }else {
+            canUpdate = false
+            isDisplayError = true
+        }
+        
     }
 
 }

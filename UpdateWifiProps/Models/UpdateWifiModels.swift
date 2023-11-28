@@ -18,7 +18,7 @@ struct RenameWifiModel {
     var name: String
     var desc: String
     var wfNameLengthMaximum: Int
-    var wfName: String
+    var wifiName: String
 }
 
 struct ChangeWFPasswordModel {

@@ -12,12 +12,26 @@ enum ePasswordErrorType {
     case length
     case duplicate
     case character
+    
+    func errorText() -> String {
+        switch self {
+        case .length:
+            "length not meet"
+        case .duplicate:
+            "wifi password is the same with the old one"
+        case .character:
+            "invalid character"
+        }
+    }
 }
 
 
 protocol ChangePasswordVMDelegate: AnyObject{
     //Function to enable or disable update password button
     func didChangeCanUpdatePass(enableUpdate: Bool)
+    
+    func didGetInputErrorMessage(message: String, willDisapear: Bool)
+
 }
 
 class ChangePasswordVM {
@@ -32,15 +46,12 @@ class ChangePasswordVM {
     
     //TODO: Handle error message here
     func firePasswordErrorMessage(type: ePasswordErrorType){
-        switch type {
-        case .length:
-            print("length not meet")
-        case .duplicate:
-            print("password is the same with the old one")
-        case .character:
-            print("invalid character")
-
+        if type == .character {
+            delegate?.didGetInputErrorMessage(message: type.errorText(), willDisapear: true)
+        }else {
+            delegate?.didGetInputErrorMessage(message: type.errorText(), willDisapear: false)
         }
+      
     }
     
     
@@ -62,6 +73,7 @@ class ChangePasswordVM {
         if string.range(of: eTypeRegexPattern.wifiPassword.rawValue, options: .regularExpression) != nil {
             //Fire error message because character input is invalid
             firePasswordErrorMessage(type: .character)
+            
 
             
             //Case  pass does not matches the regex.
@@ -73,7 +85,11 @@ class ChangePasswordVM {
             
             if textField.text == nil {
                 curPassTxt = string
-            }else {
+            }else if string == "" {
+                //Case backspace character
+                curPassTxt = String(textField.text!.dropLast())
+            }
+            else {
                 curPassTxt = textField.text! + string
             }
             
