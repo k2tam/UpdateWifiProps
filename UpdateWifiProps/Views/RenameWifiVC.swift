@@ -9,6 +9,8 @@ import UIKit
 
 class RenameWifiVC: UIViewController {
     
+    @IBOutlet weak var bottomConstraintUpdateBtn: NSLayoutConstraint!
+    
     @IBOutlet weak var renameContainerView: UIStackView!
     
     @IBOutlet weak var lbTitle: UILabel!
@@ -59,6 +61,10 @@ class RenameWifiVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
   
     
     override func viewDidLoad() {
@@ -69,8 +75,12 @@ class RenameWifiVC: UIViewController {
         tfNameWifi.delegate = self
         canRename = false
         isDisplayError = false
-
+        
+        setupKeyboardHandler()
+        
+        
     }
+    
 
     private func setupUI(){
         isDisplayError = false
@@ -121,12 +131,16 @@ extension RenameWifiVC: RenameWiFiVMDelegate {
         if willDisapear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                 self.isDisplayError = false
+                
+                if let curWFName = self.tfNameWifi.text {
+                    self.vm.checkMinimumLengthWFName(length: curWFName.count)
+                }
+                
             }
+            
+            
         }
-    
     }
-    
-
     
     func didChangeCanUpdateWFName(enableUpdate: Bool) {
         if enableUpdate {
@@ -139,4 +153,38 @@ extension RenameWifiVC: RenameWiFiVMDelegate {
     }
     
     
+   
 }
+
+//Methods handle keyboard
+extension RenameWifiVC {
+    func setupKeyboardHandler() {
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            UIView.animate(withDuration: 0.5) {
+                self.bottomConstraintUpdateBtn.constant = keyboardSize.height + 16
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        UIView.animate(withDuration: 0.5) {
+            self.bottomConstraintUpdateBtn.constant = 48
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+}
+
+

@@ -9,18 +9,18 @@ import Foundation
 import UIKit
 
 enum ePasswordErrorType {
-    case length
+    case lengthMinimum
     case duplicate
     case character
     
     func errorText() -> String {
         switch self {
-        case .length:
-            "length not meet"
+        case .lengthMinimum:
+            "Mật khẩu yêu cầu tối thiểu 8 ký tự"
         case .duplicate:
-            "wifi password is the same with the old one"
+            "Mật khẩu trùng với mật khẩu cũ"
         case .character:
-            "invalid character"
+            "Ký tự không hợp lệ"
         }
     }
 }
@@ -59,8 +59,7 @@ class ChangePasswordVM {
     func didGetUpdatablePassword(password: String){
         print(password)
     }
-    
-    
+
     
     /// Function to check a character is able to input is pass textfield
     /// - Parameters:
@@ -75,7 +74,6 @@ class ChangePasswordVM {
             firePasswordErrorMessage(type: .character)
             
 
-            
             //Case  pass does not matches the regex.
             return false
             
@@ -93,18 +91,27 @@ class ChangePasswordVM {
                 curPassTxt = textField.text! + string
             }
             
+           
+            
             //Check length of pass
             if curPassTxt.count >= passwordModel.passLengthMinimum {
                
                 delegate?.didChangeCanUpdatePass(enableUpdate: true)
                 
             }else {
-                //Fire error password not meet minimum length
-                firePasswordErrorMessage(type: .length)
                 
-                //Disable update because length condition not met
-                delegate?.didChangeCanUpdatePass(enableUpdate: false)
+                checkMinimumLengthPassword(length: curPassTxt.count)
+                
             }
+            
+            
+            
+            
+            if curPassTxt.count > passwordModel.passLengthMaximum {
+                //Disable input character because password out of maximum length
+                return false
+            }
+            
             
             //Check new pass vs old pass
             if curPassTxt ==  passwordModel.password{
@@ -114,8 +121,19 @@ class ChangePasswordVM {
                 //Disable update because new password is the same with the old one
                 delegate?.didChangeCanUpdatePass(enableUpdate: false)
             }
+           
             
             return true
+        }
+    }
+    
+    func checkMinimumLengthPassword(length: Int) {
+        if length < passwordModel.passLengthMinimum {
+            //Fire error password not meet minimum length
+            firePasswordErrorMessage(type: .lengthMinimum)
+            
+            //Disable update because length condition not met
+            delegate?.didChangeCanUpdatePass(enableUpdate: false)
         }
     }
     

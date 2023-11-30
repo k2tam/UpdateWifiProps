@@ -11,18 +11,18 @@ import Foundation
 import UIKit
 
 enum eWFNamedErrorType  {
-    case length
+    case lengthMinimum
     case duplicate
     case character
     
     func errorText() -> String {
         switch self {
-        case .length:
-            "length not meet"
+        case .lengthMinimum:
+            "Tên Wifi yêu cầu 3 ký tự trở lên"
         case .duplicate:
-            "wifi name is the same with the old one"
+            "Tên Wifi trùng với tên cũ"
         case .character:
-            "invalid character"
+            "Ký tự không hợp lệ"
         }
     }
 }
@@ -61,14 +61,12 @@ class RenameWifiVM {
     func didGetUpdatableNameWifi(nameWifi: String){
         print(nameWifi)
     }
-    
-    
-    
+
    
     func checkWifiNameInput(textField: UITextField, replacementString string: String) -> Bool {
         
         //string is character inputed
-        if string.range(of: eTypeRegexPattern.wifiname.rawValue, options: .regularExpression) != nil {
+        if string.range(of: eTypeRegexPattern.wifiName.rawValue, options: .regularExpression) != nil {
             
             //Fire error message because character input is invalid
             fireWifiNameError(type: .character)
@@ -90,24 +88,17 @@ class RenameWifiVM {
                 curWifiName = textField.text! + string
             }
             
-            
-            
             //Check length of wifi name
             if curWifiName.count <= renameWFModel.wfNameLengthMaximum {
-               
                 delegate?.didChangeCanUpdateWFName(enableUpdate: true)
-                
             }else {
-                //Fire error wifi name is out of maximum length
-                fireWifiNameError(type: .length)
-                
-                //Disable update because length condition not met
-                delegate?.didChangeCanUpdateWFName(enableUpdate: false)
-                
+                //Disable input when input length is out of maximum length
                 return false
             }
             
+            checkMinimumLengthWFName(length: curWifiName.count)
             
+          
             //Check new wifi name vs old wifi name
             if curWifiName == renameWFModel.wifiName{
                 //Fire error message because wifi name is the same with the old one
@@ -119,6 +110,13 @@ class RenameWifiVM {
             }
             
             return true
+        }
+    }
+    
+    func checkMinimumLengthWFName(length: Int) {
+        if length < renameWFModel.wfNameLengthMinimum {
+            fireWifiNameError(type: .lengthMinimum)
+            delegate?.didChangeCanUpdateWFName(enableUpdate: false)
         }
     }
     

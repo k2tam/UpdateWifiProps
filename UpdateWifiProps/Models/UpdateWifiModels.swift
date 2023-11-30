@@ -9,14 +9,15 @@ import Foundation
 
 
 enum eTypeRegexPattern: String{
+    case wifiName = ".*[^A-Za-z0-9\\_\\.\\-\\s].*"
     case wifiPassword = ".*[^A-Za-z0-9\\!\\@\\#\\$\\%\\(\\)\\:\\;\\.\\,\\_\\-].*"
-    case wifiname = ".*[^A-Za-z0-9\\_\\.\\-\\s].*"
 }
 
 struct RenameWifiModel {
     var key: String
     var name: String
     var desc: String
+    var wfNameLengthMinimum: Int
     var wfNameLengthMaximum: Int
     var wifiName: String
 }
@@ -27,6 +28,7 @@ struct ChangeWFPasswordModel {
     var desc: String
     var icon: String
     var passLengthMinimum: Int
+    var passLengthMaximum: Int
     var password: String
     
 }
