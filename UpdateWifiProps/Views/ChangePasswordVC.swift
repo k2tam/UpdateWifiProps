@@ -97,13 +97,6 @@ class ChangePasswordVC: UIViewController {
         }else{
             btnHidePassword.setTitle("Ẩn", for: .normal)
         }
-        
-        btnHidePassword.isHighlighted = false
-
-        
-        
-        
-       
     }
     
     @IBAction func btnPressed(_ sender: UIButton) {
@@ -127,6 +120,10 @@ class ChangePasswordVC: UIViewController {
         lbDescription.text = changeWFPassModel.desc
         
         tfPassword.text = changeWFPassModel.password
+        
+        tfPassword.autocorrectionType = .no
+        tfPassword.autocapitalizationType = .none
+
     }
     
     private func setupVM() {
@@ -195,6 +192,7 @@ extension ChangePasswordVC {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
@@ -204,6 +202,8 @@ extension ChangePasswordVC {
                 self.bottomConstraintUpdateBtn.constant = keyboardSize.height + 16
                 self.view.layoutIfNeeded()
             }
+            
+            
         }
     }
 

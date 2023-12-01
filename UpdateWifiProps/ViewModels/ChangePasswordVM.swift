@@ -90,9 +90,7 @@ class ChangePasswordVM {
             else {
                 curPassTxt = textField.text! + string
             }
-            
-           
-            
+
             //Check length of pass
             if curPassTxt.count >= passwordModel.passLengthMinimum {
                
@@ -103,10 +101,7 @@ class ChangePasswordVM {
                 checkMinimumLengthPassword(length: curPassTxt.count)
                 
             }
-            
-            
-            
-            
+
             if curPassTxt.count > passwordModel.passLengthMaximum {
                 //Disable input character because password out of maximum length
                 return false

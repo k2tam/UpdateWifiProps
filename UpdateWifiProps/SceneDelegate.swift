@@ -29,8 +29,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             password: "19006601"
         )
         
-//        let rootVC = ChangePasswordVC(changeWFPassModel: changeWFPasswordModel)
-        let rootVC = RenameWifiVC(renameWFModel: renameWFModel)
+        let rootVC = ChangePasswordVC(changeWFPassModel: changeWFPasswordModel)
+//        let rootVC = RenameWifiVC(renameWFModel: renameWFModel)
         
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = rootVC
